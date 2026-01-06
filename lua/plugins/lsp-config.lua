@@ -14,6 +14,13 @@ return {
           "lua_ls",
           "pyright",
           "ruff",
+          "htmtl",
+          "cssls",
+          "ts_ls",
+          "jsonls",
+          "emmet_ls",
+          "dockerls",
+          "docker_compose_language_service"
         },
       })
     end,
@@ -66,6 +73,55 @@ return {
 
     -- Ruff
     vim.lsp.config("ruff", {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- HTML
+    vim.lsp.config("html", {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+-- CSS
+    vim.lsp.config("cssls", {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+-- JavaScript / TypeScript
+    vim.lsp.config("ts_ls", {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+-- JSON
+    vim.lsp.config("jsonls", {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+-- Emmet (HTML / CSS)
+    vim.lsp.config("emmet_ls", {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = {
+        "html",
+        "css",
+        "javascript",
+        "javascriptreact",
+        "typescriptreact",
+      },
+    })
+
+-- Dockerfile
+    vim.lsp.config("dockerls", {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+-- docker-compose.yml
+    vim.lsp.config("docker_compose_language_service", {
       capabilities = capabilities,
       on_attach = on_attach,
     })

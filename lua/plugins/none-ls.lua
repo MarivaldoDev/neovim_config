@@ -6,9 +6,7 @@ return {
 			sources = {
 				null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.isort,
-        null_ls.builtins.diagnostics.ruff,
-        null_ls.builtins.diagnostics.mypy,
+        null_ls.builtins.formatting.isort
 			},
 		})
 
@@ -22,6 +20,15 @@ return {
         })
       end,
     })
+
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = { "*.html", "*.css", "*.js", "*.ts" },
+      callback = function()
+        vim.lsp.buf.format({ async = false })
+      end,
+    })
+
+
 		vim.keymap.set("n", "<leader>gf", function()
       vim.lsp.buf.format({
         filter = function(client)

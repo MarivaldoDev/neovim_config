@@ -14,7 +14,7 @@ return {
           "lua_ls",
           "pyright",
           "ruff",
-          "htmtl",
+          "html",
           "cssls",
           "ts_ls",
           "jsonls",

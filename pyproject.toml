@@ -1,7 +1,7 @@
 [tool.pyright]
 venvPath = "."
 venv = "venv"
-typeCheckingMode = "basic"
+typeCheckingMode = "standard"
 reportMissingTypeStubs = false
 reportOptionalMemberAccess = false
 
